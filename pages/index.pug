@@ -1,7 +1,27 @@
 include ../templates/layout_page.pug
 include ../templates/layout_article.pug
+include ../templates/navigation.pug
 
 +page('index')
   +header('index')
   +main
-    +content_stub
+    +section("")
+      p
+        | Web forms are all around us. This guide aims to provide a comprehensive 
+        | overview of how to develop intuitive, accessible, modern Web forms 
+        | from a high-level discussion of User Experience, of Layout, and of 
+        | Design, to the detailed technicalities of implementing common design 
+        | patterns and ensuring your Web forms meet all of the current standards.
+    nav
+      +index_page_link('User Experience', 'person', ' ')
+      +index_page_link('Layout', 'border_outer', ' ')
+      +index_page_link('Design', 'brush', ' ')
+      +index_page_link('Components', 'tune', ' ')
+      +index_page_link('Labelling', 'label_outline', ' ')
+      +index_page_link('Security', 'security', ' ')
+      +index_page_link('Privacy', 'lock', ' ')
+      +index_page_link('Validation', 'check', ' ')
+      +index_page_link('A11y', 'accessible', 'accessibility')
+      +index_page_link('I18n', 'language', 'internationalisation')
+      +index_page_link('Autofill', 'event_note', ' ')
+      +index_page_link('Printing', 'print', ' ')

@@ -59,6 +59,57 @@ body
         margin-top: 0
         line-height: $body_font_line_height
 
+    nav
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-around
+
+      @media(min-width: 450px)
+        justify-content: center
+
+      .nav_item
+        width: 100px
+        display: flex
+        flex-direction: column
+        margin: 20px
+        transition: none
+        text-decoration: none
+
+        @media(min-width: 590px)
+          margin: calc(7vw - 26px)
+
+        @media(min-width: 930px)
+          margin: calc(7.7vw - 59px)
+
+        @media (min-width: 1300px)
+          margin: 40px
+
+        .nav_item_icon
+          font-size: 3.5em
+          color: $text_color
+          text-align: center
+          background-color: #fff
+          border-radius: 10%
+          padding: 5px
+
+          i
+            font-size: inherit
+            margin-top: 12px
+
+        .nav_item_title
+          color: $text_color
+          font-weight: 400
+          font-family: $heading_font_family
+          text-align: center
+          margin-bottom: 0
+          margin-top: 1em
+
+        &:hover, &:focus
+          .nav_item_title
+            color: $accent_color
+          .nav_item_icon
+            color: $accent_color
+
   footer
     background-color: $accent_color
     display: flex

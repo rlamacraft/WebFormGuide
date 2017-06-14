@@ -1,0 +1,5 @@
+mixin index_page_link(page, icon, aria_label)
+  a(class='nav_item', href=page.toLowerCase().replace(" ", "-"))
+    .nav_item_icon
+      i(class='material-icons', aria-label= aria_label)= icon
+    span(class='nav_item_title')= page

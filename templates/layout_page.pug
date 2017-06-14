@@ -12,6 +12,15 @@ mixin main
   main
     block
       
+mixin section(name)
+  if name == ""
+    section
+      block
+  else
+    section(id= name.toLowerCase().replace(" ", "-"))
+      h2= name
+      block
+      
 mixin footer(left, right)
   footer
     block
@@ -42,6 +51,8 @@ mixin page(name)
       meta(name="theme-color", content="#22887b")
       link(rel='stylesheet', href='styles/css/styles.css')
       link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700')
+      if name == 'index'
+        link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
     body    
       block
       

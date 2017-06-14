@@ -50,6 +50,50 @@ body {
       color: #566f7b;
       margin-top: 0;
       line-height: 1.4; }
+    body main nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around; }
+      @media (min-width: 450px) {
+        body main nav {
+          justify-content: center; } }
+      body main nav .nav_item {
+        width: 100px;
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+        transition: none;
+        text-decoration: none; }
+        @media (min-width: 590px) {
+          body main nav .nav_item {
+            margin: calc(7vw - 26px); } }
+        @media (min-width: 930px) {
+          body main nav .nav_item {
+            margin: calc(7.7vw - 59px); } }
+        @media (min-width: 1300px) {
+          body main nav .nav_item {
+            margin: 40px; } }
+        body main nav .nav_item .nav_item_icon {
+          font-size: 3.5em;
+          color: #566f7b;
+          text-align: center;
+          background-color: #fff;
+          border-radius: 10%;
+          padding: 5px; }
+          body main nav .nav_item .nav_item_icon i {
+            font-size: inherit;
+            margin-top: 12px; }
+        body main nav .nav_item .nav_item_title {
+          color: #566f7b;
+          font-weight: 400;
+          font-family: "roboto slab", georgia, serif;
+          text-align: center;
+          margin-bottom: 0;
+          margin-top: 1em; }
+        body main nav .nav_item:hover .nav_item_title, body main nav .nav_item:focus .nav_item_title {
+          color: #22887b; }
+        body main nav .nav_item:hover .nav_item_icon, body main nav .nav_item:focus .nav_item_icon {
+          color: #22887b; }
   body footer {
     background-color: #22887b;
     display: flex;
