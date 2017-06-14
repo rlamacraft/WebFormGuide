@@ -1,0 +1,88 @@
+body {
+  display: flex;
+  flex-direction: column; }
+  body header {
+    min-height: 200px;
+    height: 25vh;
+    background-color: #22887b;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between; }
+    body header .top {
+      order: 2;
+      background-color: rgba(0, 0, 0, 0.2);
+      padding: 5px 10px;
+      font-family: "roboto slab", georgia, serif; }
+      body header .top #topics {
+        text-decoration: none;
+        font-size: 1.1em;
+        color: #f7f7f7; }
+        body header .top #topics:focus, body header .top #topics:hover {
+          text-decoration: underline; }
+    body header h1 {
+      font-family: "roboto slab", georgia, serif;
+      font-weight: 400;
+      font-size: calc(3vw + 18px);
+      color: #f7f7f7;
+      margin: 0;
+      margin-top: auto;
+      padding: 10px 40px; }
+      @media (min-width: 1180px) {
+        body header h1 {
+          padding-left: calc(50% - 550px);
+          font-size: 53px; } }
+      @media (min-width: 1300px) {
+        body header h1 {
+          padding-left: calc(50% - 550px); } }
+  body main {
+    flex-grow: 1;
+    background-color: #f7f7f7;
+    padding: 30px 40px 10px 40px; }
+    @media (min-width: 1180px) {
+      body main {
+        padding: 30px calc(50% - 550px) 10px calc(50% - 550px); } }
+    @media (min-width: 1300px) {
+      body main {
+        padding: 30px calc(50% - 550px) 10px calc(50% - 550px); } }
+    body main section p {
+      font-family: sans-serif;
+      font-size: 1.1em;
+      color: #566f7b;
+      margin-top: 0;
+      line-height: 1.4; }
+  body footer {
+    background-color: #22887b;
+    display: flex;
+    justify-content: space-between;
+    font-family: "roboto slab", georgia, serif;
+    color: #f7f7f7;
+    padding: 15px;
+    padding-bottom: 0;
+    flex-wrap: wrap;
+    min-height: 95px; }
+    body footer .next, body footer .prev {
+      padding: 5px 15px;
+      color: #f7f7f7;
+      text-decoration: none;
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius: 3px;
+      margin-right: auto;
+      margin-left: 0;
+      margin-bottom: 15px; }
+      body footer .next:hover .name, body footer .prev:hover .name {
+        text-decoration: underline; }
+      body footer .next .label, body footer .prev .label {
+        font-size: 1.3em; }
+      body footer .next .name, body footer .prev .name {
+        font-size: 1.9em;
+        padding-top: 5px; }
+    body footer .next {
+      text-align: right;
+      align-self: flex-end;
+      margin-right: 0;
+      margin-left: auto; }
+
+html, body {
+  margin: 0;
+  background-color: #f7f7f7;
+  height: 100%; }

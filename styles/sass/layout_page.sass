@@ -1,0 +1,98 @@
+body
+  display: flex
+  flex-direction: column
+
+  header
+    min-height: $header_height_min
+    height: $header_height
+    background-color: $accent_color
+    display: flex
+    flex-direction: column-reverse
+    justify-content: space-between
+
+    .top
+      order: 2
+      background-color: $accent_overlay
+      padding: $extra_small_spacing $small_spacing
+      font-family: $heading_font_family
+
+      #topics
+        text-decoration: none
+        font-size: $standard_font_size
+        color: $off_white
+
+        &:focus, &:hover
+          text-decoration: underline
+
+    h1
+      font-family: $heading_font_family
+      font-weight: $header_font_weight
+      font-size: $header_title_font_size
+      color: $off_white
+      margin: 0
+      margin-top: auto
+      padding: $small_spacing $large_spacing
+
+      @media (min-width: $center_content_medium)
+        padding-left: $center_content_margin_medium
+        font-size: $header_title_font_size_large
+
+      @media(min-width: $center_content_large)
+        padding-left: $center_content_margin_large
+
+  main
+    flex-grow: 1
+    background-color: $off_white
+    padding: $main_spacing_top $large_spacing $small_spacing $large_spacing
+
+    @media (min-width: $center_content_medium)
+      padding: $main_spacing_top $center_content_margin_medium $small_spacing $center_content_margin_medium
+
+    @media(min-width: $center_content_large)
+      padding: $main_spacing_top $center_content_margin_large $small_spacing $center_content_margin_large
+
+    section
+      p
+        font-family: $body_font_family
+        font-size: $standard_font_size
+        color: $text_color
+        margin-top: 0
+        line-height: $body_font_line_height
+
+  footer
+    background-color: $accent_color
+    display: flex
+    justify-content: space-between
+    font-family: $heading_font_family
+    color: $off_white
+    padding: $standard_spacing
+    padding-bottom: 0
+    flex-wrap: wrap
+    min-height: $footer_height_min
+
+    .next, .prev
+      padding: $extra_small_spacing $standard_spacing
+      color: $off_white
+      text-decoration: none
+      background-color: $accent_overlay
+      border-radius: $border_radius
+      margin-right: auto
+      margin-left: 0
+      margin-bottom: $standard_spacing
+
+      &:hover
+        .name
+          text-decoration: underline
+
+      .label
+        font-size: $footer_label_font_size
+
+      .name
+        font-size: $footer_name_font_size
+        padding-top: $extra_small_spacing
+
+    .next
+      text-align: right
+      align-self: flex-end
+      margin-right: 0
+      margin-left: auto

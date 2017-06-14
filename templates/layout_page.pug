@@ -1,0 +1,48 @@
+mixin header(name)
+  - var heading = name
+  if name == 'index'
+    - heading = 'WebForm.Guide'
+  header
+    if name != 'index'
+      .top
+        a(id='topics', href='/') WebForm.Guide - All Topics
+    h1= heading
+    
+mixin main
+  main
+    block
+      
+mixin footer(left, right)
+  footer
+    block
+      
+mixin footer(prev_foot, next_foot)
+  footer
+    if prev_foot != ""
+      - var href = prev_foot.toLowerCase().replace(" ", "-")
+      a(href= href, class='prev')
+        .label Previous
+        .name= prev_foot
+    if next_foot != ""
+      - var href = next_foot.toLowerCase().replace(" ", "-")
+      a(href= href, class='next')
+        .label Next
+        .name= next_foot
+
+mixin page(name)
+  doctype html
+  html(lang='en-GB')
+    head
+      - var title = 'WebForm.Guide'
+      if name != 'index'
+        - title = name + " | " + title
+      title= title
+      meta(charset="utf-8")
+      meta(name="viewport", content="width=device-width, initial-scale=1")
+      meta(name="theme-color", content="#22887b")
+      link(rel='stylesheet', href='styles/css/styles.css')
+      link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700')
+    body    
+      block
+      
+      
