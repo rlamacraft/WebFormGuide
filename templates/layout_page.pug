@@ -20,6 +20,16 @@ mixin section(name)
     section(id= name.toLowerCase().replace(" ", "-"))
       h2= name
       block
+        
+mixin aside(title)
+  aside
+    if title != ''
+      span(class='term')= title
+    block
+      
+mixin external_links_section
+  ul
+    block
       
 mixin footer(left, right)
   footer
@@ -55,5 +65,10 @@ mixin page(name)
         link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
     body    
       block
+
+mixin github_issue_footer
+  section(class='issue_footer')
+    | Corrections? Improvements? Suggestions? #[a(href="https://github.com/rlamacraft/WebFormGuide/issues") Drop us an issue].
+
       
       

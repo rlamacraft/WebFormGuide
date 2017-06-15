@@ -3,3 +3,33 @@ mixin index_page_link(page, icon, aria_label)
     .nav_item_icon
       i(class='material-icons', aria-label= aria_label)= icon
     span(class='nav_item_title')= page
+    
+mixin page_contents(...titles)
+  nav(class="contents")
+    h2 Contents
+    ul
+      for title in titles
+        li
+          +section_link(title)
+        
+mixin section_link(section_name)
+  - var href = '#' + section_name.toLowerCase().replace(" ", "-")
+  a(href= href)= section_name
+  
+  mixin page_link(...args)
+    - var page = args[0] || ''
+    - var section = args[1] || ''
+    - var text = args[2] || ''
+    - var href = ""
+    - var link_text = text || section || page
+    if page != ""
+      - href = page.toLowerCase().replace(" ", "-")
+      if section != ""
+        - href += "#" + section.toLowerCase().replace(" ", "-")
+    a(href=href)= link_text
+    
+mixin external_link(href, title, info)
+  li
+    a(href= href)= title
+    |  - 
+    =info

@@ -1,1 +1,84 @@
-<!DOCTYPE html><html lang="en-GB"><head><title>User Experience | WebForm.Guide</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#22887b"><link rel="stylesheet" href="styles/css/styles.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700"></head><body>   <header><div class="top"><a id="topics" href="/">WebForm.Guide - All Topics</a></div><h1>User Experience</h1></header><main><section><p>Currently in development, will be available very soon.</p></section></main><footer><a class="next" href="layout"><div class="label">Next</div><div class="name">Layout</div></a></footer></body></html>
+<!DOCTYPE html><html lang="en-GB"><head><title>User Experience | WebForm.Guide</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#22887b"><link rel="stylesheet" href="styles/css/styles.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700"></head><body>   <header><div class="top"><a id="topics" href="/">WebForm.Guide - All Topics</a></div><h1>User Experience</h1></header><main><section><aside><span class="term">User Experience</span>The overall experience of a person using a product such as a website 
+or computer application, especially in terms of how easy or pleasing 
+it is to use: <em>if a website degrades the user experience too much, people will simply stay away</em>.</aside><p>When designing systems for people, it is important to carefully 
+consider the User Experience. Users do not enjoy filling out forms; 
+they just want to get in and get out. The experience should be 
+pleasant and positive, but most of all it should be quick and 
+frictionless. Your form should be intuitive to use for all of your 
+users and leave the user with a state of satisfaction in a job completed.</p></section><nav class="contents"><h2>Contents</h2><ul><li><a href="#research">Research</a></li><li><a href="#user-flows">User Flows</a></li><li><a href="#aesthetics">Aesthetics</a></li><li><a href="#wording">Wording</a></li><li><a href="#question-protocols">Question Protocols</a></li><li><a href="#sources">Sources</a></li><li><a href="#additional-resources">Additional Resources</a></li></ul></nav><section id="research"><h2>Research</h2><p>Before starting any project it should be understood precisely who the 
+system is being designed for. Feedback on every stage of development 
+is a requirement for building a successful system; to ensure that the 
+specification accurately reflects the needs of the end user, to ensure 
+every prototype is catching all of the potential issues, and finally 
+to ensure that the final product is usable by the end user. Forms, and 
+more specifically, Web forms, are no different.</p><p>There are an endless number of variables. Do you know where in the 
+world they are? Do you know how old they are, what languages they 
+speak, how technically literate they are? What browser or device do 
+they use? Do they have an impairments, temporary or permanent, that 
+may hinder their ability to complete the form? Will they/do they 
+return often to your form? The answers to all of these questions (and 
+many more) should tightly influence the design of the form. To 
+consider exactly how, it is worth categorising aspects of a form into 
+the following three categories: <a href="#user-flows">user flows</a>, 
+<a href="#aesthetics">aesthetics</a>, and <a href="#wording">wording</a>.</p></section><section id="user-flows"><h2>User Flows</h2><p>It may seem obvious at first (after all the user goes from the start 
+to the end of the form), but the flow of the form is an important 
+consideration especially for longer forms where the user may get 
+distracted or confused as they progress through each step of your form. 
+It is quite likely that your form will not be the only thing that the 
+user is focused on - their concentration is very unlikely to be 100% - 
+so the means to get through the form as fast as possible should be 
+exceptionally clear.</p><p>It is worth taking the time to consider whether any of the following 
+are true for your form, and if any are then it is worth taking the 
+time to consider how the form could be re-structured to reduce the 
+added to complexity to the flow.</p><ul><li><strong>Are there any splits in the user’s flow?</strong> Skippable questions? Decision points where the user may end up in different places? There 
+are definitely no dead-ends, right?</li><li><strong>Are there any breaks in the user’s flow?</strong>  Long loading/waiting times? Pop-up windows? (Lots of information in the 
+<a href="components#modal">modal</a> section). Will the user need to 
+go away and loop information up or gather documentation? Can the 
+details of that information be given up front?</li></ul></section><section id="aesthetics"><h2>Aesthetics</h2><p>The visual appeal of the form can make an enormous difference to the 
+user experience, however, it is worth keeping mind that a completable, 
+but ugly form, is better than a form that is a beautiful but the user 
+can’t complete because of any number of user flows or wording issues. 
+Many aspects of the <a href="design">design</a> and <a href="layout">layout</a> 
+will be discussed in their respective sections, as well as a discussion 
+of relevant sub-topics in the <a href="a11y">accessibility</a> 
+section, but it is worth keeping in mind some of the following principles:</p><ul><li><strong>Reduce clutter</strong>. Visual noise is distracting, and if all the user wants to do is complete the form then everything else is a 
+distraction. Letting the form elements breath is also important and 
+if the form is confusing to complete you’re probably not using enough 
+whitespace - though remember to keep associated elements visually close together.</li><aside><span class="term">Design Affordances</span>Intuitive design that signals the opportunity to perform an action. 
+<em>A teapot has a handle and spout that visually describe how to use a teapot</em>.</aside><li><strong>Provide affordances</strong> in the design. This helps communicate visually to the user what they can action and should also be used for 
+ensuring <a href="a11y">accessible</a> design. Common design 
+affordances include making buttons look clickable, especially making 
+primary buttons stand out. This 
+<a href="https://www.youtube.com/watch?v=g2tzEil5TL0">YouTube tutorial by Rob Dobson</a> 
+is a good introduction.</li><li><strong>Make state and progress very clear</strong>; this encourages user to complete the form as they see the light at the end of the tunnel and 
+also provides a means to give feedback on the validity of their 
+inputs (see <a href="validation">validation</a>).</li><li><strong>Strictly adhere to best practices</strong>; this ensures the accessibility of your form and compatibility with the myriad of 
+devices. Standards exist for a reason. Many of the best practices 
+will be discussed in other sections of this guide. </li><li><strong>Keep things simple, stupid</strong>.  Don’t over engineer the form - keep any executing code small, simple, and performant. Use 
+<a href="design#motion">animation</a> for effective 
+communication of state, but do not use excessively. Likewise for 
+<a href="design#colour">colour</a>: it can be used for 
+drawing attention to communicating information (such as errors), but 
+should not be overused.</li></ul></section><section id="wording"><h2>Wording</h2><p>Wording will be covered in depth in the <a href="labelling">labelling</a>
+section, with some discussion in the <a href="components">components</a>
+and <a href="a11y">accessibility</a> sections, but the 
+following principles are the main topics that should be considered</p><ul><li><strong>Be clear, specific, and direct</strong>. Ambiguous, confusing, or vague explanations and descriptions make filing out forms hard - at 
+no point should the user be forced to question what exactly is being 
+asked of them. Do not roll multiple questions into one to reduce the 
+number of questions as that can lead to more complex questions and 
+confusing edge-cases.</li><li><strong>Use the user's vocabulary</strong>. This goes back to knowing your user, and is especially true when the user is required input 
+information on a domain of knowledge they are not comfortable with 
+such as their health. Use terms they are comfortable with and would 
+use in everyday conversation. Also, do not use unexplained acronyms 
+or abbreviations unless you can guarantee every user knows and 
+remembers them (which is unlikely).</li><li><strong>Use a conversational tone that reflects the tone of the service</strong>. If the user is signing up for a bank account or applying for a travel 
+visa then the form should be serious and formal, but if the user is 
+just signing up for an email newsletter or giving feedback on a service 
+then an approachable, informal tone is more appropriate.</li></ul></section><section id="question-protocols"><h2>Question Protocols</h2><p>It is worth taking the time to carefully consider how you use the data 
+collected from your users, identify whether you strictly need all of the 
+questions, and ponder similar such questions. This is the job of the 
+question protocol. Some possible additional questions to consider include
+the following but it will depend on your particular service.</p><ul><li>Who within the organisation uses the answers?</li><li>What do they use the information for?</li><li>Is the information absolutely necessary?</li><li>If it is required, what happens if the user enters the wrong thing, intentionally or by accident?</li><li>Or what happens if the user’s info changes?</li><li>How long will the data be stored for?</li><li>Most importantly, what legal and <a href="privacy">privacy</a> issues may there be with the collected data?</li></ul><p>Every question has a cost based on the required cognitive load to answer 
+it, too much and users will give up, leave, or become frustrated. This 
+can be avoided by minimising the number of the questions, splitting complex 
+questions up, and using multiple <a href="layout#paging">pages</a>.</p></section><section id="sources"><h2>Sources</h2><ul><li><a href="http://www.uxbooth.com/articles/the-essential-guide-to-writing-effective-survey-questions/">The Essential Guide to Writing Effective Survey Questions</a> - uxbooth.com</li><li><a href="http://www.uxmatters.com/mt/archives/2010/06/the-question-protocol-how-to-make-sure-every-form-field-is-necessary.php">The Question Protocol: How to Make Sure Every Form Is Necessary</a> - uxmatters.com</li><li><a href="http://uxpod.com/definitive-advice-on-forms-an-interview-with-jessica-enders/">Definitive Advice on Forms: An Interview with Jessica Enders</a> - uxpod.com</li><li><a href="https://www.gov.uk/service-manual/design/form-structure">Form Structure - Service Manual</a> - gov.uk</li></ul></section><section id="additional-resources"><h2>Additional Resources</h2><ul><li><a href="http://thehipperelement.com/post/75476711614/ux-crash-course-31-fundamentals">UX Crash Course: 31 Fundamentals</a> - thehipperelement.com</li><li><a href="https://www.nngroup.com/articles/ux-research-cheat-sheet/">UX Research Cheat Sheet</a> - nngroup.com</li><li><a href="https://www.nngroup.com/articles/does-user-annoyance-matter/">Does User Annoyance Matter?</a> - nngroup.com</li><li><a href="https://books.google.co.uk/books?id=hkqYXMeXPVgC&amp;lpg=PP1&amp;ots=r9yY-3tS2l&amp;dq=%20forms%20that%20work&amp;lr">Forms that Work: Designing Web Forms for Usability</a> - books.google.co.uk - Caroline Jarrett, Gerry Gaffney</li><li><a href="http://www.experienceux.co.uk/ux-blog/2017/03/09/ux-insider-interview-caroline-jarrett-discusses-forms-surveys-need-brave/">Caroline Jarret discusses forms, surveys, and the need to brave.</a> - experienceux.co.uk</li><li><a href="https://www.amazon.com/exec/obidos/ASIN/0994347057/informdesign">Designing UX Forms: Create Forms That Don't Drive Your Users Crazy</a> - amazon.com - Jessica Enders</li></ul></section><section class="issue_footer">Corrections? Improvements? Suggestions? <a href="https://github.com/rlamacraft/WebFormGuide/issues">Drop us an issue</a>.</section></main><footer><a class="next" href="layout"><div class="label">Next</div><div class="name">Layout</div></a></footer></body></html>

@@ -1,9 +1,197 @@
 include ../templates/layout_page.pug
 include ../templates/layout_article.pug
+include ../templates/navigation.pug
 
 +page('User Experience')
   +header('User Experience')
   +main
-    +content_stub
+    +section('')
+      +aside('User Experience')
+        | The overall experience of a person using a product such as a website 
+        | or computer application, especially in terms of how easy or pleasing 
+        | it is to use: #[em if a website degrades the user experience too much, people will simply stay away].
+      p
+        | When designing systems for people, it is important to carefully 
+        | consider the User Experience. Users do not enjoy filling out forms; 
+        | they just want to get in and get out. The experience should be 
+        | pleasant and positive, but most of all it should be quick and 
+        | frictionless. Your form should be intuitive to use for all of your 
+        | users and leave the user with a state of satisfaction in a job completed.
+    +page_contents('Research', 'User Flows', 'Aesthetics', 'Wording', 'Question Protocols', 'Sources', 'Additional Resources')
+    +section('Research')
+      p
+        | Before starting any project it should be understood precisely who the 
+        | system is being designed for. Feedback on every stage of development 
+        | is a requirement for building a successful system; to ensure that the 
+        | specification accurately reflects the needs of the end user, to ensure 
+        | every prototype is catching all of the potential issues, and finally 
+        | to ensure that the final product is usable by the end user. Forms, and 
+        | more specifically, Web forms, are no different.
+      p
+        | There are an endless number of variables. Do you know where in the 
+        | world they are? Do you know how old they are, what languages they 
+        | speak, how technically literate they are? What browser or device do 
+        | they use? Do they have an impairments, temporary or permanent, that 
+        | may hinder their ability to complete the form? Will they/do they 
+        | return often to your form? The answers to all of these questions (and 
+        | many more) should tightly influence the design of the form. To 
+        | consider exactly how, it is worth categorising aspects of a form into 
+        | the following three categories: #[+section_link('user flows')], 
+        | #[+section_link('aesthetics')], and #[+section_link('wording')].
+    +section('User Flows')
+      p
+        | It may seem obvious at first (after all the user goes from the start 
+        | to the end of the form), but the flow of the form is an important 
+        | consideration especially for longer forms where the user may get 
+        | distracted or confused as they progress through each step of your form. 
+        | It is quite likely that your form will not be the only thing that the 
+        | user is focused on - their concentration is very unlikely to be 100% - 
+        | so the means to get through the form as fast as possible should be 
+        | exceptionally clear.
+      p
+        | It is worth taking the time to consider whether any of the following 
+        | are true for your form, and if any are then it is worth taking the 
+        | time to consider how the form could be re-structured to reduce the 
+        | added to complexity to the flow.
+      ul
+        li #[strong Are there any splits in the user’s flow?] Skippable questions? 
+          | Decision points where the user may end up in different places? There 
+          | are definitely no dead-ends, right?
+        li #[strong Are there any breaks in the user’s flow?]  Long loading/waiting 
+          | times? Pop-up windows? (Lots of information in the 
+          | #[+page_link('components', 'modal')] section). Will the user need to 
+          | go away and loop information up or gather documentation? Can the 
+          | details of that information be given up front?
+    +section('Aesthetics')
+      p
+        | The visual appeal of the form can make an enormous difference to the 
+        | user experience, however, it is worth keeping mind that a completable, 
+        | but ugly form, is better than a form that is a beautiful but the user 
+        | can’t complete because of any number of user flows or wording issues. 
+        | Many aspects of the #[+page_link('design')] and #[+page_link('layout')] 
+        | will be discussed in their respective sections, as well as a discussion 
+        | of relevant sub-topics in the #[+page_link('a11y', '', 'accessibility')] 
+        | section, but it is worth keeping in mind some of the following principles:
+      ul
+        li #[strong Reduce clutter]. Visual noise is distracting, and if all the 
+          | user wants to do is complete the form then everything else is a 
+          | distraction. Letting the form elements breath is also important and 
+          | if the form is confusing to complete you’re probably not using enough 
+          | whitespace - though remember to keep associated elements visually close together.
+        +aside('Design Affordances')
+          | Intuitive design that signals the opportunity to perform an action. 
+          | #[em A teapot has a handle and spout that visually describe how to use a teapot].
+        li #[strong Provide affordances] in the design. This helps communicate 
+          | visually to the user what they can action and should also be used for 
+          | ensuring #[+page_link('a11y', '', 'accessible')] design. Common design 
+          | affordances include making buttons look clickable, especially making 
+          | primary buttons stand out. This 
+          | #[a(href="https://www.youtube.com/watch?v=g2tzEil5TL0") YouTube tutorial by Rob Dobson] 
+          | is a good introduction.
+        li #[strong Make state and progress very clear]; this encourages users to 
+          | complete the form as they see the light at the end of the tunnel and 
+          | also provides a means to give feedback on the validity of their 
+          | inputs (see #[+page_link('validation')]).
+        li #[strong Strictly adhere to best practices]; this ensures the 
+          | accessibility of your form and compatibility with the myriad of 
+          | devices. Standards exist for a reason. Many of the best practices 
+          | will be discussed in other sections throughout this guide. 
+        li #[strong Keep things simple, stupid].  Don’t over engineer the form - 
+          | keep any executing code small, simple, and performant. Use 
+          | #[+page_link('design', 'motion', 'animation')] for effective 
+          | communication of state, but do not use excessively. Likewise for 
+          | #[+page_link('design', 'colour', 'colour')]: it can be used for 
+          | drawing attention to communicating information (such as errors), but 
+          | should not be overused.
+    +section('Wording')
+      p
+        | Wording will be covered in depth in the #[+page_link('labelling')]
+        | section, with some discussion in the #[+page_link('components')]
+        | and #[+page_link('a11y', '', 'accessibility')] sections, but the 
+        | following principles are the main topics that should be considered.
+      ul
+        li #[strong Be clear, specific, and direct]. Ambiguous, confusing, or 
+          | vague explanations and descriptions make filing out forms hard - at 
+          | no point should the user be forced to question what exactly is being 
+          | asked of them. Do not roll multiple questions into one to reduce the 
+          | number of questions as that can lead to more complex questions and 
+          | confusing edge-cases.
+        li #[strong Use the user's vocabulary]. This goes back to knowing your 
+          | user, and is especially true when the user is required to input 
+          | information on a domain of knowledge they are not comfortable with 
+          | such as their health. Use terms they are comfortable with and would 
+          | use in everyday conversation. Also, do not use unexplained acronyms 
+          | or abbreviations unless you can guarantee every user knows and 
+          | remembers them (which is unlikely).
+        li #[strong Use a conversational tone that reflects the tone of the service]. 
+          | If the user is signing up for a bank account or applying for a travel 
+          | visa then the form should be serious and formal, but if the user is 
+          | just signing up for an email newsletter or giving feedback on a service 
+          | then an approachable, informal tone is more appropriate.
+    +section('Question Protocols')
+      p
+        | It is worth taking the time to carefully consider how you use the data 
+        | collected from your users, identify whether you strictly need all of the 
+        | questions, and ponder similar such questions. This is the job of the 
+        | question protocol. Some possible additional questions to consider include
+        | the following but it will depend on your particular service.
+      ul
+        li Who within the organisation uses the answers?
+        li What do they use the information for?
+        li Is the information absolutely necessary?
+        li If it is required, what happens if the user enters the wrong thing, intentionally or by accident?
+        li Or what happens if the user’s info changes?
+        li How long will the data be stored for?
+        li Most importantly, what legal and #[+page_link('privacy')] issues may there be with the collected data?
+      p
+        | Every question has a cost based on the required cognitive load to answer 
+        | it, too much and users will give up, leave, or become frustrated. This 
+        | can be avoided by minimising the number of the questions, splitting complex 
+        | questions up, and using multiple #[+page_link('layout','paging','pages')].
+    +section('Sources')
+      +external_links_section
+        +external_link('http://www.uxbooth.com/articles/the-essential-guide-to-writing-effective-survey-questions/', 
+          'The Essential Guide to Writing Effective Survey Questions', 
+          'uxbooth.com'
+        )
+        +external_link('http://www.uxmatters.com/mt/archives/2010/06/the-question-protocol-how-to-make-sure-every-form-field-is-necessary.php', 
+          'The Question Protocol: How to Make Sure Every Form Is Necessary', 
+          'uxmatters.com'
+        )
+        +external_link('http://uxpod.com/definitive-advice-on-forms-an-interview-with-jessica-enders/',
+          'Definitive Advice on Forms: An Interview with Jessica Enders',
+          'uxpod.com'
+        )
+        +external_link('https://www.gov.uk/service-manual/design/form-structure',
+          'Form Structure - Service Manual',
+          'gov.uk'
+        )
+    +section('Additional Resources')
+      +external_links_section
+        +external_link('http://thehipperelement.com/post/75476711614/ux-crash-course-31-fundamentals',
+          'UX Crash Course: 31 Fundamentals',
+          'thehipperelement.com'
+        )
+        +external_link('https://www.nngroup.com/articles/ux-research-cheat-sheet/',
+          'UX Research Cheat Sheet',
+          'nngroup.com'
+        )
+        +external_link('https://www.nngroup.com/articles/does-user-annoyance-matter/',
+          'Does User Annoyance Matter?',
+          'nngroup.com'
+        )
+        +external_link('https://books.google.co.uk/books?id=hkqYXMeXPVgC&lpg=PP1&ots=r9yY-3tS2l&dq=%20forms%20that%20work&lr',
+          'Forms that Work: Designing Web Forms for Usability',
+          'books.google.co.uk - Caroline Jarrett, Gerry Gaffney'
+        )
+        +external_link('http://www.experienceux.co.uk/ux-blog/2017/03/09/ux-insider-interview-caroline-jarrett-discusses-forms-surveys-need-brave/',
+          'Caroline Jarret discusses forms, surveys, and the need to brave.',
+          'experienceux.co.uk'
+        )
+        +external_link('https://www.amazon.com/exec/obidos/ASIN/0994347057/informdesign',
+          'Designing UX Forms: Create Forms That Don\'t Drive Your Users Crazy',
+          'amazon.com - Jessica Enders'
+        )
+    +github_issue_footer
   +footer('', 'Layout')
     

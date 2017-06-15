@@ -10,12 +10,12 @@ body {
     justify-content: space-between; }
     body header .top {
       order: 2;
-      background-color: rgba(0, 0, 0, 0.2);
+      background-color: rgba(0, 0, 0, 0.1);
       padding: 5px 10px;
       font-family: "roboto slab", georgia, serif; }
       body header .top #topics {
         text-decoration: none;
-        font-size: 1.1em;
+        font-size: 1em;
         color: #f7f7f7; }
         body header .top #topics:focus, body header .top #topics:hover {
           text-decoration: underline; }
@@ -44,20 +44,56 @@ body {
     @media (min-width: 1300px) {
       body main {
         padding: 30px calc(50% - 550px) 10px calc(50% - 550px); } }
-    body main section p {
+    body main h2 {
+      font-family: "roboto slab", georgia, serif;
+      font-size: 2em;
+      font-weight: 400;
+      color: #566f7b; }
+    body main a {
+      color: #2cb1a0; }
+    body main section {
       font-family: sans-serif;
-      font-size: 1.1em;
-      color: #566f7b;
+      font-size: 1em;
       margin-top: 0;
-      line-height: 1.4; }
-    body main nav {
+      line-height: 1.4;
+      color: #566f7b; }
+      body main section.issue_footer {
+        margin-top: 40px; }
+      body main section p, body main section li {
+        color: #566f7b; }
+      body main section a {
+        color: #2cb1a0; }
+      body main section li {
+        margin-bottom: 0.5em; }
+      body main section aside {
+        padding: 1em;
+        padding-top: 0.5em;
+        border-left: 3px solid #22887b;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        font-family: sans-serif;
+        line-height: 1.4;
+        color: #566f7b; }
+        @media (min-width: 600px) {
+          body main section aside {
+            float: right;
+            width: 16em;
+            background-color: rgba(0, 0, 0, 0.1);
+            margin: 10px -40px 10px 1.5em; } }
+        body main section aside .term {
+          font-family: "roboto slab", georgia, serif;
+          font-size: 1em;
+          font-weight: 700;
+          display: block;
+          margin-bottom: 5px; }
+    body main nav.pages {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around; }
       @media (min-width: 450px) {
-        body main nav {
+        body main nav.pages {
           justify-content: center; } }
-      body main nav .nav_item {
+      body main nav.pages .nav_item {
         width: 100px;
         display: flex;
         flex-direction: column;
@@ -65,35 +101,53 @@ body {
         transition: none;
         text-decoration: none; }
         @media (min-width: 590px) {
-          body main nav .nav_item {
+          body main nav.pages .nav_item {
             margin: calc(7vw - 26px); } }
         @media (min-width: 930px) {
-          body main nav .nav_item {
+          body main nav.pages .nav_item {
             margin: calc(7.7vw - 59px); } }
         @media (min-width: 1300px) {
-          body main nav .nav_item {
+          body main nav.pages .nav_item {
             margin: 40px; } }
-        body main nav .nav_item .nav_item_icon {
+        body main nav.pages .nav_item .nav_item_icon {
           font-size: 3.5em;
           color: #566f7b;
           text-align: center;
           background-color: #fff;
           border-radius: 10%;
           padding: 5px; }
-          body main nav .nav_item .nav_item_icon i {
+          body main nav.pages .nav_item .nav_item_icon i {
             font-size: inherit;
             margin-top: 12px; }
-        body main nav .nav_item .nav_item_title {
+        body main nav.pages .nav_item .nav_item_title {
           color: #566f7b;
           font-weight: 400;
           font-family: "roboto slab", georgia, serif;
           text-align: center;
           margin-bottom: 0;
           margin-top: 1em; }
-        body main nav .nav_item:hover .nav_item_title, body main nav .nav_item:focus .nav_item_title {
+        body main nav.pages .nav_item:hover .nav_item_title, body main nav.pages .nav_item:focus .nav_item_title {
           color: #22887b; }
-        body main nav .nav_item:hover .nav_item_icon, body main nav .nav_item:focus .nav_item_icon {
+        body main nav.pages .nav_item:hover .nav_item_icon, body main nav.pages .nav_item:focus .nav_item_icon {
           color: #22887b; }
+    body main nav.contents {
+      font-family: "roboto slab", georgia, serif;
+      margin-bottom: 40px; }
+      body main nav.contents ul {
+        list-style: none;
+        border-left: 3px solid #22887b;
+        padding-left: 20px; }
+        body main nav.contents ul li {
+          font-size: 1em;
+          line-height: 2; }
+          body main nav.contents ul li a {
+            color: #2cb1a0;
+            text-decoration: none;
+            font-size: 1em; }
+            body main nav.contents ul li a:focus, body main nav.contents ul li a:hover {
+              text-decoration: underline; }
+          body main nav.contents ul li ul {
+            border-left: none; }
   body footer {
     background-color: #22887b;
     display: flex;
@@ -103,12 +157,12 @@ body {
     padding: 15px;
     padding-bottom: 0;
     flex-wrap: wrap;
-    min-height: 95px; }
+    min-height: 6em; }
     body footer .next, body footer .prev {
       padding: 5px 15px;
       color: #f7f7f7;
       text-decoration: none;
-      background-color: rgba(0, 0, 0, 0.2);
+      background-color: rgba(0, 0, 0, 0.1);
       border-radius: 3px;
       margin-right: auto;
       margin-left: 0;
