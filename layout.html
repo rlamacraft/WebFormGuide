@@ -1,1 +1,70 @@
-<!DOCTYPE html><html lang="en-GB"><head><title>Layout | WebForm.Guide</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#22887b"><link rel="stylesheet" href="styles/css/styles.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700"></head><body>   <header><div class="top"><a id="topics" href="/">WebForm.Guide - All Topics</a></div><h1>Layout</h1></header><main><section><p>Currently in development, will be available very soon.</p></section></main><footer><a class="prev" href="user-experience"><div class="label">Previous</div><div class="name">User Experience</div></a><a class="next" href="design"><div class="label">Next</div><div class="name">Design</div></a></footer></body></html>
+<!DOCTYPE html><html lang="en-GB"><head><title>Layout | WebForm.Guide</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#22887b"><link rel="stylesheet" href="styles/css/styles.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700"></head><body>   <header><div class="top"><a id="topics" href="/">WebForm.Guide - All Topics</a></div><h1>Layout</h1></header><main><section><p>How the form is laid out, especially for more complex forms, has an
+enormouse impact on the user's ability to easily complete the form and
+achieve what it is they set out to do. There has been plenty of research
+into the impact of different approaches to presenting form elements and 
+from this we can derive a number of simple design patterns that 
+standardise and streamline the <a href="user-experience">user experience</a>.</p><p>It has long been known that people browsing the Web don’t read, they scan. 
+This was a fact known in 1997 and yet still forms everywhere require the 
+users to dissect what they’re presented with, read through too many verbose 
+instructions, and move across the page in an unintuitive manner. We can
+do better than this.</p></section><nav class="contents"><h2>Contents</h2><ul><li><a href="#group-content">Group Content</a></li><li><a href="#paging">Paging</a></li><li><a href="#whitespace">Whitespace</a></li><li><a href="#single-column">Single Column</a></li><li><a href="#positioning-labels">Positioning Labels</a></li><li><a href="#sources">Sources</a></li><li><a href="#additional-resources">Additional Resources</a></li></ul></nav><section id="group-content"><h2>Group Content</h2><p>First and foremost, break the content into digestible chunks. This isn’t 
+necessarily a problem for short forms like log-ins or newsletter subscriptions, 
+but for anything longer it is 
+worth taking the time to break the content - the questions, the fields, 
+and associated information - into sensible groupings. This can also solve 
+<strong>problems of meaning</strong>, where the way content presented can be
+ambiguous and confusing: for example, when purchasing an item an address 
+field may refer to the delivery address or address associated with a credit 
+card - simply breaking up the form into payment and delivery sections 
+reduces the potential for confusion. For more information, see page 54 
+of Forms That Work (link below).</p><p>If the groupings are more than a few in number, then adding headings is 
+a good way to make the form scannable and allow the user to orientate 
+themselves. This is also great for <a href="a11y">accessibility</a> 
+as screen readers can use headings to build a hierarchy for blind users. 
+Headings should, however, only even be used in a strictly nested order 
+- level 2 headings only after a level 1 heading, level 3’s only after a level 2, etc.
+Rob Dobson explains why in the video tutorial linked below.</p></section><section id="paging"><h2>Paging</h2><aside><span class="term">What exactly is a wizard?</span>Similar in many ways to a multi-paged form, but the focus is on easy-to-answer 
+questions and a default state that simplifies an otherwise complex process.</aside><p>Paging is worth doing once the form becomes overwhelming when viewed in 
+one go. There are no numerical minimum or maximum numbers on the ideal 
+number of elements to a page, or total number of pages, it all entirely 
+depends on the users and the domain at hand. Obviously, this is not all 
+that helpful in identifying if your form needs to be split into multiple 
+pages, nor is it helpful in identifying if your twenty page form is too 
+long. It is this, more than anything, that benefits from user research. 
+In some cases, as advised by gov.uk, it may make sense to split every 
+question onto a separate page, whilst in other cases it may make sense 
+to just give the user everything they need (though this is far less likely).</p><p>So what if you don’t have time to do user research? Ask yourself how willing 
+will your users be to spending time getting through these questions. If 
+the answer is not “very willing” then splitting the questions into digestible 
+chunks is probably wise, and it is probably a good idea to err on the 
+side of too many divisions. Just not too many that users get tired of
+pressing next.</p><p>Also, when using paging it is absolutely a good idea to perform <a href="validation">validation</a> 
+on what the user has entered. Getting to the end of the long multi-page 
+form to be told that some information on page 2 is incorrect is not fun. 
+Especially, if the subsequent pages then getting wiped. Don’t ever ask 
+a user to type the same thing twice; this happens far too often.</p></section><section id="whitespace"><h2>Whitespace</h2><p>Ok, enough on blocks of content. How about the content - the questions 
+and the form elements themselves? The easiest trick to make the form 
+easier to complete is to reduce clutter, and thus distractions. Increase 
+the whitespace between elements (don’t worry users know how to scroll 
+if necessary), and remove any superfluous content on the page.  Whitespace
+provides three distinct purposes.</p><ul><li><strong>Scannability</strong>. As mentioned, users scan rather than read and whitespace helps distinguish between distinct parts of the form. Adding
+significant whitespace between the grouping of content discussed above
+is especially important.</li><li><strong>Comprehension</strong>. Whitespace around text makes it easier to comprehend. Just look how easy it is to read this without any distracting 
+content on the sides of the page. Just the important stuff in a field of nothingness.</li><li><strong>Direction</strong>. Communicating elements - call-to-action buttons, error messages, etc - are much more obvious when the rest of the content
+is subdued and there are fewer distractions. The whitespace is directing
+the user towards what is actually important.</li></ul></section><section id="single-column"><h2>Single Column</h2><p>User research, consistently proves that users find forms much easier to 
+fill out and make fewer mistakes if they are presented each of the questions 
+and fields in a sequential order. <strong>One at a time, from top to bottom</strong>. 
+It goes back to the whole scanning behaviour: having all of the content in 
+one vertical column it is very easy to scan from one point of focus to 
+the next. And even better, this is very easily to achieve in HTML and CSS, 
+but if you need something more complex than the default browser behaviour, 
+flexbox is the ideal solution as content can be arranged in a responsive 
+manner and is supported by all major modern browsers. </p></section><section id="positioning-labels"><h2>Positioning Labels</h2><p>Another fact backed by plenty of research (see the sources) is that 
+<strong>labels should be placed above a field</strong> rather than beside 
+(left or right). Plenty on labelling will be discussed in the 
+<a href="labelling">labelling</a> and <a href="i18n">internationalisation</a> 
+sections, but it is worth mentioning that eye-tracking research has revealed 
+that users scan down the left side of the form and will take more time 
+to read labels if they fall between consecutive components of the form. 
+This results in a smoother experience and fewer mistakes made.</p></section><section id="sources"><h2>Sources</h2><ul><li><a href="https://www.nngroup.com/articles/how-users-read-on-the-web/">How Users read on the Web</a> - nngroup.com</li><li><a href="http://uxpod.com/definitive-advice-on-forms-an-interview-with-jessica-enders/">Definitive Advice on Forms: An Interview with Jessica Enders</a> - uxpod.com</li><li><a href="https://www.gov.uk/service-manual/design/form-structure">Form Structure - Service Manual</a> - gov.uk</li><li><a href="https://books.google.co.uk/books?id=hkqYXMeXPVgC&amp;lpg=PP1&amp;ots=r9yY-3tS2l&amp;dq=%20forms%20that%20work&amp;lr">Forms that Work: Designing Web Forms for Usability</a> - books.google.co.uk - Caroline Jarrett, Gerry Gaffney</li><li><a href="https://www.youtube.com/watch?v=vAAzdi1xuUY">Why headings and landmarks are so important -- A11ycasts #18</a> - youtube.com</li><li><a href="http://www.uxmatters.com/mt/archives/2006/07/label-placement-in-forms.php">Label Placement in Forms</a> - uxmatter.com</li><li><a href="https://research.googleblog.com/2014/07/simple-is-better-making-your-web-forms.html">Simple is better - Making your web forms easy to use pays off</a> - research.googleblog.com</li><li><a href="https://shinesolutions.com/2017/05/02/its-not-you-its-your-form/">It's not you, it's your form.</a> - shinesolutions.com</li><li><a href="https://www.freshconsulting.com/uiux-principle-12-white-space-is-an-essential-design-asset/">UI/UX Principle #12: Whitespace is an Essential Design Asset</a> - freshconsulting.com</li></ul></section><section id="additional-resources"><h2>Additional Resources</h2><ul><li><a href="https://www.nngroup.com/articles/web-form-design/">Website Forms Usability: Top 10 Recommendations</a> - nngroup.com</li><li><a href="https://www.smashingmagazine.com/2017/05/better-form-design-one-thing-per-page/">Better Form Design: One Thing Per Page (Case Study)</a> - smashingmagazine.com</li><li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">A Guide to Flexbox</a> - css-tricks.com</li><li><a href="https://medium.com/@david.gilbertson/11-things-i-learned-reading-the-flexbox-spec-5f0c799c776b">11 things I learned reading the flexbox spec</a> - medium.com</li><li><a href="https://www.ibm.com/developerworks/library/us-wizard/">Crafting a wizard</a> - ibm.com</li><li><a href="http://babich.biz/wizard-design-pattern/">Wizard Design Patterns</a> - babich.biz</li><li><a href="https://shop.smashingmagazine.com/products/smashing-book-2">Smashing Book #2 (eBook)</a> - shop.smashingmagazine.com</li></ul></section><section class="issue_footer">Corrections? Improvements? Suggestions? <a href="https://github.com/rlamacraft/WebFormGuide/issues">Drop us an issue</a>.</section></main><footer><a class="prev" href="user-experience"><div class="label">Previous</div><div class="name">User Experience</div></a><a class="next" href="design"><div class="label">Next</div><div class="name">Design</div></a></footer></body></html>

@@ -16,17 +16,17 @@ mixin section_link(section_name)
   - var href = '#' + section_name.toLowerCase().replace(" ", "-")
   a(href= href)= section_name
   
-  mixin page_link(...args)
-    - var page = args[0] || ''
-    - var section = args[1] || ''
-    - var text = args[2] || ''
-    - var href = ""
-    - var link_text = text || section || page
-    if page != ""
-      - href = page.toLowerCase().replace(" ", "-")
-      if section != ""
-        - href += "#" + section.toLowerCase().replace(" ", "-")
-    a(href=href)= link_text
+mixin page_link(...args)
+  - var page = args[0] || ''
+  - var section = args[1] || ''
+  - var text = args[2] || ''
+  - var href = ""
+  - var link_text = text || section || page
+  if page != ""
+    - href = page.toLowerCase().replace(" ", "-")
+    if section != ""
+      - href += "#" + section.toLowerCase().replace(" ", "-")
+  a(href=href)= link_text
     
 mixin external_link(href, title, info)
   li

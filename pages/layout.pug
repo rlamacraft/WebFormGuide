@@ -1,8 +1,166 @@
 include ../templates/layout_page.pug
 include ../templates/layout_article.pug
+include ../templates/navigation.pug
 
 +page('Layout')
   +header('Layout')
   +main
-    +content_stub
+    +section('')
+      p
+        | How the form is laid out, especially for more complex forms, has an
+        | enormouse impact on the user's ability to easily complete the form and
+        | achieve what it is they set out to do. There has been plenty of research
+        | into the impact of different approaches to presenting form elements and 
+        | from this we can derive a number of simple design patterns that 
+        | standardise and streamline the #[+page_link('user experience')].
+      p
+        | It has long been known that people browsing the Web don’t read, they scan. 
+        | This was a fact known in 1997 and yet still forms everywhere require the 
+        | users to dissect what they’re presented with, read through too many verbose 
+        | instructions, and move across the page in an unintuitive manner. We can
+        | do better than this.
+    +page_contents('Group Content', 'Paging', 'Whitespace', 'Single Column', 'Positioning Labels', 'Sources', 'Additional Resources')
+    +section('Group Content')
+      p
+        | First and foremost, break the content into digestible chunks. This isn’t 
+        | necessarily a problem for short forms like log-ins or newsletter subscriptions, 
+        | but for anything longer it is 
+        | worth taking the time to break the content - the questions, the fields, 
+        | and associated information - into sensible groupings. This can also solve 
+        | #[strong problems of meaning], where the way content presented can be
+        | ambiguous and confusing: for example, when purchasing an item an address 
+        | field may refer to the delivery address or address associated with a credit 
+        | card - simply breaking up the form into payment and delivery sections 
+        | reduces the potential for confusion. For more information, see page 54 
+        | of Forms That Work (link below).
+      p
+        | If the groupings are more than a few in number, then adding headings is 
+        | a good way to make the form scannable and allow the user to orientate 
+        | themselves. This is also great for #[+page_link('a11y', '', 'accessibility')] 
+        | as screen readers can use headings to build a hierarchy for blind users. 
+        | Headings should, however, only even be used in a strictly nested order 
+        | - level 2 headings only after a level 1 heading, level 3’s only after a level 2, etc.
+        | Rob Dobson explains why in the video tutorial linked below.
+    +section('Paging')
+      +aside('What exactly is a wizard?')
+        | Similar in many ways to a multi-paged form, but the focus is on easy-to-answer 
+        | questions and a default state that simplifies an otherwise complex process.
+      p
+        | Paging is worth doing once the form becomes overwhelming when viewed in 
+        | one go. There are no numerical minimum or maximum numbers on the ideal 
+        | number of elements to a page, or total number of pages, it all entirely 
+        | depends on the users and the domain at hand. Obviously, this is not all 
+        | that helpful in identifying if your form needs to be split into multiple 
+        | pages, nor is it helpful in identifying if your twenty page form is too 
+        | long. It is this, more than anything, that benefits from user research. 
+        | In some cases, as advised by gov.uk, it may make sense to split every 
+        | question onto a separate page, whilst in other cases it may make sense 
+        | to just give the user everything they need (though this is far less likely).
+      p
+        | So what if you don’t have time to do user research? Ask yourself how willing 
+        | will your users be to spending time getting through these questions. If 
+        | the answer is not “very willing” then splitting the questions into digestible 
+        | chunks is probably wise, and it is probably a good idea to err on the 
+        | side of too many divisions. Just not too many that users get tired of
+        | pressing next.
+      p
+        | Also, when using paging it is absolutely a good idea to perform #[+page_link('validation')] 
+        | on what the user has entered. Getting to the end of the long multi-page 
+        | form to be told that some information on page 2 is incorrect is not fun. 
+        | Especially, if the subsequent pages then getting wiped. Don’t ever ask 
+        | a user to type the same thing twice; this happens far too often.
+    +section('Whitespace')
+      p
+        | Ok, enough on blocks of content. How about the content - the questions 
+        | and the form elements themselves? The easiest trick to make the form 
+        | easier to complete is to reduce clutter, and thus distractions. Increase 
+        | the whitespace between elements (don’t worry users know how to scroll 
+        | if necessary), and remove any superfluous content on the page.  Whitespace
+        | provides three distinct purposes.
+      ul
+        li #[strong Scannability]. As mentioned, users scan rather than read and 
+          | whitespace helps distinguish between distinct parts of the form. Adding
+          | significant whitespace between the grouping of content discussed above
+          | is especially important.
+        li #[strong Comprehension]. Whitespace around text makes it easier to 
+          | comprehend. Just look how easy it is to read this without any distracting 
+          | content on the sides of the page. Just the important stuff in a field of nothingness.
+        li #[strong Direction]. Communicating elements - call-to-action buttons, 
+          | error messages, etc - are much more obvious when the rest of the content
+          | is subdued and there are fewer distractions. The whitespace is directing
+          | the user towards what is actually important.
+    +section('Single Column')
+      p
+        | User research, consistently proves that users find forms much easier to 
+        | fill out and make fewer mistakes if they are presented each of the questions 
+        | and fields in a sequential order. #[strong One at a time, from top to bottom]. 
+        | It goes back to the whole scanning behaviour: having all of the content in 
+        | one vertical column it is very easy to scan from one point of focus to 
+        | the next. And even better, this is very easily to achieve in HTML and CSS, 
+        | but if you need something more complex than the default browser behaviour, 
+        | flexbox is the ideal solution as content can be arranged in a responsive 
+        | manner and is supported by all major modern browsers. 
+    +section('Positioning Labels')
+      p
+        | Another fact backed by plenty of research (see the sources) is that 
+        | #[strong labels should be placed above a field] rather than beside 
+        | (left or right). Plenty on labelling will be discussed in the 
+        | #[+page_link('labelling')] and #[+page_link('i18n', '', 'internationalisation')] 
+        | sections, but it is worth mentioning that eye-tracking research has revealed 
+        | that users scan down the left side of the form and will take more time 
+        | to read labels if they fall between consecutive components of the form. 
+        | This results in a smoother experience and fewer mistakes made.
+    +section('Sources')
+      +external_links_section
+        +external_link('https://www.nngroup.com/articles/how-users-read-on-the-web/',
+          'How Users read on the Web',
+          'nngroup.com')
+        +external_link('http://uxpod.com/definitive-advice-on-forms-an-interview-with-jessica-enders/',
+          'Definitive Advice on Forms: An Interview with Jessica Enders',
+          'uxpod.com')
+        +external_link('https://www.gov.uk/service-manual/design/form-structure',
+          'Form Structure - Service Manual',
+          'gov.uk')
+        +external_link('https://books.google.co.uk/books?id=hkqYXMeXPVgC&lpg=PP1&ots=r9yY-3tS2l&dq=%20forms%20that%20work&lr',
+          'Forms that Work: Designing Web Forms for Usability',
+          'books.google.co.uk - Caroline Jarrett, Gerry Gaffney')
+        +external_link('https://www.youtube.com/watch?v=vAAzdi1xuUY',
+          'Why headings and landmarks are so important -- A11ycasts #18',
+          'youtube.com')
+        +external_link('http://www.uxmatters.com/mt/archives/2006/07/label-placement-in-forms.php',
+          'Label Placement in Forms',
+          'uxmatter.com')
+        +external_link('https://research.googleblog.com/2014/07/simple-is-better-making-your-web-forms.html',
+          'Simple is better - Making your web forms easy to use pays off',
+          'research.googleblog.com')
+        +external_link('https://shinesolutions.com/2017/05/02/its-not-you-its-your-form/',
+          'It\'s not you, it\'s your form.',
+          'shinesolutions.com')
+        +external_link('https://www.freshconsulting.com/uiux-principle-12-white-space-is-an-essential-design-asset/',
+          'UI/UX Principle #12: Whitespace is an Essential Design Asset',
+          'freshconsulting.com')
+    +section('Additional Resources')
+      +external_links_section
+        +external_link('https://www.nngroup.com/articles/web-form-design/',
+          'Website Forms Usability: Top 10 Recommendations',
+          'nngroup.com')
+        +external_link('https://www.smashingmagazine.com/2017/05/better-form-design-one-thing-per-page/',
+          'Better Form Design: One Thing Per Page (Case Study)',
+          'smashingmagazine.com')
+        +external_link('https://css-tricks.com/snippets/css/a-guide-to-flexbox/',
+          'A Guide to Flexbox',
+          'css-tricks.com')
+        +external_link('https://medium.com/@david.gilbertson/11-things-i-learned-reading-the-flexbox-spec-5f0c799c776b',
+          '11 things I learned reading the flexbox spec',
+          'medium.com')
+        +external_link('https://www.ibm.com/developerworks/library/us-wizard/',
+          'Crafting a wizard',
+          'ibm.com')
+        +external_link('http://babich.biz/wizard-design-pattern/',
+          'Wizard Design Patterns',
+          'babich.biz')
+        +external_link('https://shop.smashingmagazine.com/products/smashing-book-2',
+          'Smashing Book #2 (eBook)',
+          'shop.smashingmagazine.com')
+    +github_issue_footer
   +footer('User Experience', 'Design')
