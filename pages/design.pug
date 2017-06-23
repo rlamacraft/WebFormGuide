@@ -1,8 +1,190 @@
 include ../templates/layout_page.pug
 include ../templates/layout_article.pug
+include ../templates/navigation.pug
 
 +page('Design')
   +header('Design')
   +main
-    +content_stub
+    +section('')
+      p
+        | How a form is designed can have a substantial impact on a user’s ability 
+        | to complete the form. After considering the 
+        | #[+page_link('User Experience', 'User Flows')], 
+        | #[+page_link('User Experience', 'Question Protocols')], and general 
+        | #[+page_link('Layout')], the visual design is the next obvious consideration 
+        | for improving the usability of a form. A number of different aspect of 
+        | the design of forms will be discussed here but ultimately the aim is to 
+        | reduce distractions and clearly communicate the necessary information.
+    +page_contents('Typography', 'Iconography', 'Colour', 'Motion', 'Sources', 'Additional Resources')
+    +section('Typography')
+      p
+        | Ensuring that text is readable is not hard; browser defaults generally 
+        | provide a good experience for most able users. However, it is important 
+        | that any design is compatible with #[+page_link('a11y','', 'accessibility technologies')] 
+        | (zooming, variable default browser font size, screen readers, etc).
+      ul
+        li First and foremost, choosing a readable font-family is of great importance. 
+          | #[strong A simplistic style, ideally sans-serif, is important], however 
+          | there is still sufficient possible variation to reflect the tone of 
+          | your service. As with all Web development, if it is possible to avoid 
+          | downloading additional fonts then that would be a preferable choice 
+          | to megabytes of custom fonts, simply for performance reasons.
+        li #[strong Avoid excessively thin text] (a minimum font-weight 300 is a 
+          | good rule) that will be hard to read for those with visual impairment, 
+          | or simply users in poor lighting conditions.
+        li #[strong Don’t have excessively long lines]. The length of these lines 
+          | on desktop should be considered an absolute maximum as it makes it harder 
+          | to read.
+        li #[strong Don’t have a tiny font size]. 
+          | #[span(style='font-size:.5em') This is really hard to read isn't it].
+        li(style='line-height:.85') #[strong Don't have a low line-height value]
+          br
+          | This is also hard to read.
+        li(style='line-height:2') #[strong But also don't have a huge line-height].
+          br
+          | 1.4 is about ideal for body text, which is what the line-height for 
+          | the rest of the text on the page is.
+    +section('Iconography')
+      p
+        | Icons can provide variation in the visual design - breaking up otherwise 
+        | large amounts of text and empty fields. It also allows users to scan and 
+        | identify fields more effectively, and are typically used in conjunction 
+        | with component labels. 
+      ul
+        li #[strong Should be simple, intuitive, and bold]. This makes it easy to 
+          | scan the components of the form, especially for returning users who 
+          | associate the icons with particular information points that they may 
+          | just be looking for rather than completing every field.
+        li #[strong Not sufficient to unambiguously communicate information]; for 
+          | example it is not enough to communicate errors with only an icon, a 
+          | textual explanation should also be used, as icons can be interpreted 
+          | differently by different users and the textual label is also necessary
+          | for screen readers.
+        li #[strong As an addition when communicating state], for example where 
+          | red error messages would not be obvious to a colour blind user the addition 
+          | of a warning icon (perhaps an exclamation in a triangle) would make 
+          | this more obvious.
+    +section('Colour')
+      p
+        | A strategic use of colour can make a form easier to complete by guiding 
+        | the user through the form and maximising the usability of all of the content.
+      p
+        | First and foremost, it is a good practice to design the form (or any website 
+        | in general) in greyscale and then add small amounts of colour where it 
+        | is beneficial for the user experience. A single accent colour, with possibly 
+        | a few shades, is ideal here which can then be #[strong applied to elements that should draw the user’s attention.]
+        | These may be call-to-action elements, 
+        | such as primary buttons, hyperlinks, or even just banners and borders 
+        | that highlight key elements. The key, however, is to limit the user of 
+        | colour to maximise the effect of where it is used. #[strong Excessive colour is distracting, so don’t do it.]
+      p
+        | Colour can also be used to communicate state. For this it is best to to 
+        | use primary colours that are quite distinct from the branding colours 
+        | of your website and are similar to the standard colours for the respective 
+        | purpose. For example, it is standard practice to use red for errors; highlighting 
+        | invalid data, for example. Amber may also be used for warnings, or green 
+        | for success. 
+        +aside('Red or Amber?')
+          | If in doubt when to use red or amber: one possible way of consider the 
+          | different is if action has to be taken now (such as fixing invalid input) 
+          | then display red, if action should be taken at some point in the future 
+          | (e.g. service will be down for maintenance) then use amber.
+        | However, it is not sufficient to use colours changes on their 
+        | own to communicate information as it can be difficult if not impossible 
+        | for some colour blind users to be able to perceive this change - for example, 
+        | error warnings denoting #[+page_link('validation','','invalid data entry')] 
+        | should display both a colour change to red as well as 
+        | #[strong both a useful icon and a textual explanation of what the field is expecting].
+      p
+        | Whenever there is some content (could be text, icons, fields, images, 
+        | anything) on some background it is important there is sufficient contrast 
+        | in order to make it clearly visible for all users. Low contrast can cause 
+        | eyestrain or simply not visible to users with a visual impairment, and 
+        | as a result Web Content Accessibility Guidelines specify a #[strong contrast ratio of 4.5:1]. There are some links below to tools that can help in selecting 
+        | colours. Moreover, there is one additional caveat when selecting the font 
+        | colours and background colours of text: true black (#000) can be difficult 
+        | to read on as it looks unnatural and true white (#fff) can be too similar 
+        | to staring straight into a beaming light. To mimic printed text it is 
+        | generally best practice to use off-black text on an off-white background. 
+        | Check the colour of this text, you’ll see it is a much softer shade.
+    +section('Motion')
+      p
+        | Animation is an effective way to bring life to a user interface, however, 
+        | should be used for specific and effective purposes. Some of those purposes, 
+        | where the animation adds to the user experience, include the following.
+      ul
+        li #[strong Orientation:] for denoting progress - especially through pages 
+          | of a form - through a series or sequence of steps. Animating content 
+          | in or out is a good way to communicate this, such as a calendar component 
+          | expanding or modals popping up.
+        li #[strong Functional Change:] describe a change in the behaviour of interacting 
+          | with a UI element, such as open-close toggles. This may involve animating 
+          | between the design of two icons, or revealing and covering textual labels
+          | to explain what the new function of the element is.
+        li #[strong New Element:] to draw focus to new content that has been added 
+          | to the page. This should be used in conjunction with drawing screen reader 
+          | focus to announce the change. Human eyes are good at noticing movement 
+          | and so animating content in does this effectively.
+        li #[strong Highlight:] to draw focus to existing content. This can be effective 
+          | in guiding the user through the form to important components or information. 
+          | Animating colour change or subtle movement of icons or labels will draw
+          | the user's attention to specific parts of the form, for example a very
+          | subtly pulsing submit button.
+        li #[strong Visual Feedback & System Status:] communicate information to 
+          | user that something is happening, or why something has happened. Spinners, 
+          | progress bars, dismissing content, or even buttons that shake when the 
+          | action cannot be completed, are all examples.
+      p
+        | It is important that animations are performant so that the webpage continues 
+        | to be rendered a 60 frames a second. To do this it is generally best to 
+        | stick to the transform and opacity CSS properties. For more information, 
+        | there are plenty of useful resources linked below.
+      p
+        | Animation should, however, be kept to a minimum as it can be distracting 
+        | especially for those with cognitive disabilities.
+    +section('Sources')
+      +external_link('https://www.w3.org/TR/WCAG20/',
+        'Web Content Accessibility Guidelines (WCAG) 2.0',
+        'w3.org')
+      +external_link('https://medium.com/startup-grind/how-to-not-suck-at-design-a-5-minute-guide-for-the-non-designer-291efac43037',
+        'How to not suck at design, a 5 minute guide for the non-designer.',
+        'medium.com')
+      +external_link('http://ianstormtaylor.com/design-tip-never-use-black/',
+        'Design Tip: Never Use Black',
+        'ianstormtaylor.com')
+      +external_link('http://edwardsanchez.me/blog/13589712',
+        'Icons vs Labels vs Both',
+        'edwardsanchez.me')
+      +external_link('https://www.youtube.com/watch?v=GeuNIOuIEDA',
+        'Animating the Moments — Using Animation in UX (CSS Animations Series Part 3)',
+        'youtube.com - DevTips')
+      +external_link('https://developers.google.com/web/fundamentals/design-and-ui/animations/',
+        'Animations',
+        'developers.google.com')
+    +section('Additional Resources')
+      +external_link('http://donnieberg.github.io/promises/',
+        'Promises to Users.',
+        'donnieberg.github.io')
+      +external_link('https://css-tricks.com/equilateral-triangle-perfect-paragraph/',
+        'The Equilateral Triangle of a Perfect Paragraph',
+        'css-tricks.com')
+      +external_link('https://www.smashingmagazine.com/2016/10/icons-as-part-of-a-great-user-experience/',
+        'Icons As Part Of A Great User Experience',
+        'smashingmagazine.com')
+      +external_link('https://uxplanet.org/essential-color-tools-for-ux-designers-530036eaf9ae',
+        'Essential Color Tools for UX Designers',
+        'uxplanet.org')
+      +external_link('http://webaim.org/resources/contrastchecker/',
+        'Color Contrast Checker',
+        'webaim.org')
+      +external_link('https://www.youtube.com/playlist?list=PLqGj3iMvMa4LvJ8VctoXnPI0dtE40wfid',
+        'CSS Animations Series',
+        'youtube.com - DevTips')
+      +external_link('https://www.youtube.com/watch?v=thNyy5eYfbc',
+        'High performance web user interfaces - Google I/O 2016',
+        'youtube.com - Google Chrome Developers')
+      +external_link('https://csstriggers.com/',
+        'CSS Triggers',
+        'csstrigger.com, on performant animatable CSS properties')
+    +github_issue_footer
   +footer('Layout', 'Components')

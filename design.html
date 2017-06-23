@@ -1,1 +1,76 @@
-<!DOCTYPE html><html lang="en-GB"><head><title>Design | WebForm.Guide</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#22887b"><link rel="stylesheet" href="styles/css/styles.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700"></head><body>   <header><div class="top"><a id="topics" href="/">WebForm.Guide - All Topics</a></div><h1>Design</h1></header><main><section><p>Currently in development, will be available very soon.</p></section></main><footer><a class="prev" href="layout"><div class="label">Previous</div><div class="name">Layout</div></a><a class="next" href="components"><div class="label">Next</div><div class="name">Components</div></a></footer></body></html>
+<!DOCTYPE html><html lang="en-GB"><head><title>Design | WebForm.Guide</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#22887b"><link rel="stylesheet" href="styles/css/styles.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700"></head><body>   <header><div class="top"><a id="topics" href="/">WebForm.Guide - All Topics</a></div><h1>Design</h1></header><main><section><p>How a form is designed can have a substantial impact on a user’s ability 
+to complete the form. After considering the 
+<a href="user-experience#user-flows">User Flows</a>, 
+<a href="user-experience#question-protocols">Question Protocols</a>, and general 
+<a href="layout">Layout</a>, the visual design is the next obvious consideration 
+for improving the usability of a form. A number of different aspect of 
+the design of forms will be discussed here but ultimately the aim is to 
+reduce distractions and clearly communicate the necessary information.</p></section><nav class="contents"><h2>Contents</h2><ul><li><a href="#typography">Typography</a></li><li><a href="#iconography">Iconography</a></li><li><a href="#colour">Colour</a></li><li><a href="#motion">Motion</a></li><li><a href="#sources">Sources</a></li><li><a href="#additional-resources">Additional Resources</a></li></ul></nav><section id="typography"><h2>Typography</h2><p>Ensuring that text is readable is not hard; browser defaults generally 
+provide a good experience for most able users. However, it is important 
+that any design is compatible with <a href="a11y">accessibility technologies</a> 
+(zooming, variable default browser font size, screen readers, etc).</p><ul><li>First and foremost, choosing a readable font-family is of great importance. <strong>A simplistic style, ideally sans-serif, is important</strong>, however 
+there is still sufficient possible variation to reflect the tone of 
+your service. As with all Web development, if it is possible to avoid 
+downloading additional fonts then that would be a preferable choice 
+to megabytes of custom fonts, simply for performance reasons.</li><li><strong>Avoid excessively thin text</strong> (a minimum font-weight 300 is a good rule) that will be hard to read for those with visual impairment, 
+or simply users in poor lighting conditions.</li><li><strong>Don’t have excessively long lines</strong>. The length of these lines on desktop should be considered an absolute maximum as it makes it harder 
+to read.</li><li><strong>Don’t have a tiny font size</strong>. <span style="font-size:.5em;">This is really hard to read isn't it</span>.</li><li style="line-height:.85;"><strong>Don't have a low line-height value</strong><br>This is also hard to read.</li><li style="line-height:2;"><strong>But also don't have a huge line-height</strong>.<br>1.4 is about ideal for body text, which is what the line-height for 
+the rest of the text on the page is.</li></ul></section><section id="iconography"><h2>Iconography</h2><p>Icons can provide variation in the visual design - breaking up otherwise 
+large amounts of text and empty fields. It also allows users to scan and 
+identify fields more effectively, and are typically used in conjunction 
+with component labels. </p><ul><li><strong>Should be simple, intuitive, and bold</strong>. This makes it easy to scan the components of the form, especially for returning users who 
+associate the icons with particular information points that they may 
+just be looking for rather than completing every field.</li><li><strong>Not sufficient to unambiguously communicate information</strong>; for example it is not enough to communicate errors with only an icon, a 
+textual explanation should also be used, as icons can be interpreted 
+differently by different users and the textual label is also necessary
+for screen readers.</li><li><strong>As an addition when communicating state</strong>, for example where red error messages would not be obvious to a colour blind user the addition 
+of a warning icon (perhaps an exclamation in a triangle) would make 
+this more obvious.</li></ul></section><section id="colour"><h2>Colour</h2><p>A strategic use of colour can make a form easier to complete by guiding 
+the user through the form and maximising the usability of all of the content.</p><p>First and foremost, it is a good practice to design the form (or any website 
+in general) in greyscale and then add small amounts of colour where it 
+is beneficial for the user experience. A single accent colour, with possibly 
+a few shades, is ideal here which can then be <strong>applied to elements that should draw the user’s attention.</strong>
+These may be call-to-action elements, 
+such as primary buttons, hyperlinks, or even just banners and borders 
+that highlight key elements. The key, however, is to limit the user of 
+colour to maximise the effect of where it is used. <strong>Excessive colour is distracting, so don’t do it.</strong></p><p>Colour can also be used to communicate state. For this it is best to to 
+use primary colours that are quite distinct from the branding colours 
+of your website and are similar to the standard colours for the respective 
+purpose. For example, it is standard practice to use red for errors; highlighting 
+invalid data, for example. Amber may also be used for warnings, or green 
+for success. <aside><span class="term">Red or Amber?</span>If in doubt when to use red or amber: one possible way of consider the 
+different is if action has to be taken now (such as fixing invalid input) 
+then display red, if action should be taken at some point in the future 
+(e.g. service will be down for maintenance) then use amber.</aside>However, it is not sufficient to use colours changes on their 
+own to communicate information as it can be difficult if not impossible 
+for some colour blind users to be able to perceive this change - for example, 
+error warnings denoting <a href="validation">invalid data entry</a> 
+should display both a colour change to red as well as 
+<strong>both a useful icon and a textual explanation of what the field is expecting</strong>.</p><p>Whenever there is some content (could be text, icons, fields, images, 
+anything) on some background it is important there is sufficient contrast 
+in order to make it clearly visible for all users. Low contrast can cause 
+eyestrain or simply not visible to users with a visual impairment, and 
+as a result Web Content Accessibility Guidelines specify a <strong>contrast ratio of 4.5:1</strong>. There are some links below to tools that can help in selecting 
+colours. Moreover, there is one additional caveat when selecting the font 
+colours and background colours of text: true black (#000) can be difficult 
+to read on as it looks unnatural and true white (#fff) can be too similar 
+to staring straight into a beaming light. To mimic printed text it is 
+generally best practice to use off-black text on an off-white background. 
+Check the colour of this text, you’ll see it is a much softer shade.</p></section><section id="motion"><h2>Motion</h2><p>Animation is an effective way to bring life to a user interface, however, 
+should be used for specific and effective purposes. Some of those purposes, 
+where the animation adds to the user experience, include the following.</p><ul><li><strong>Orientation:</strong> for denoting progress - especially through pages of a form - through a series or sequence of steps. Animating content 
+in or out is a good way to communicate this, such as a calendar component 
+expanding or modals popping up.</li><li><strong>Functional Change:</strong> describe a change in the behaviour of interacting with a UI element, such as open-close toggles. This may involve animating 
+between the design of two icons, or revealing and covering textual labels
+to explain what the new function of the element is.</li><li><strong>New Element:</strong> to draw focus to new content that has been added to the page. This should be used in conjunction with drawing screen reader 
+focus to announce the change. Human eyes are good at noticing movement 
+and so animating content in does this effectively.</li><li><strong>Highlight:</strong> to draw focus to existing content. This can be effective in guiding the user through the form to important components or information. 
+Animating colour change or subtle movement of icons or labels will draw
+the user's attention to specific parts of the form, for example a very
+subtly pulsing submit button.</li><li><strong>Visual Feedback & System Status:</strong> communicate information to user that something is happening, or why something has happened. Spinners, 
+progress bars, dismissing content, or even buttons that shake when the 
+action cannot be completed, are all examples.</li></ul><p>It is important that animations are performant so that the webpage continues 
+to be rendered a 60 frames a second. To do this it is generally best to 
+stick to the transform and opacity CSS properties. For more information, 
+there are plenty of useful resources linked below.</p><p>Animation should, however, be kept to a minimum as it can be distracting 
+especially for those with cognitive disabilities.</p></section><section id="sources"><h2>Sources</h2><li><a href="https://www.w3.org/TR/WCAG20/">Web Content Accessibility Guidelines (WCAG) 2.0</a> - w3.org</li><li><a href="https://medium.com/startup-grind/how-to-not-suck-at-design-a-5-minute-guide-for-the-non-designer-291efac43037">How to not suck at design, a 5 minute guide for the non-designer.</a> - medium.com</li><li><a href="http://ianstormtaylor.com/design-tip-never-use-black/">Design Tip: Never Use Black</a> - ianstormtaylor.com</li><li><a href="http://edwardsanchez.me/blog/13589712">Icons vs Labels vs Both</a> - edwardsanchez.me</li><li><a href="https://www.youtube.com/watch?v=GeuNIOuIEDA">Animating the Moments — Using Animation in UX (CSS Animations Series Part 3)</a> - youtube.com - DevTips</li><li><a href="https://developers.google.com/web/fundamentals/design-and-ui/animations/">Animations</a> - developers.google.com</li></section><section id="additional-resources"><h2>Additional Resources</h2><li><a href="http://donnieberg.github.io/promises/">Promises to Users.</a> - donnieberg.github.io</li><li><a href="https://css-tricks.com/equilateral-triangle-perfect-paragraph/">The Equilateral Triangle of a Perfect Paragraph</a> - css-tricks.com</li><li><a href="https://www.smashingmagazine.com/2016/10/icons-as-part-of-a-great-user-experience/">Icons As Part Of A Great User Experience</a> - smashingmagazine.com</li><li><a href="https://uxplanet.org/essential-color-tools-for-ux-designers-530036eaf9ae">Essential Color Tools for UX Designers</a> - uxplanet.org</li><li><a href="http://webaim.org/resources/contrastchecker/">Color Contrast Checker</a> - webaim.org</li><li><a href="https://www.youtube.com/playlist?list=PLqGj3iMvMa4LvJ8VctoXnPI0dtE40wfid">CSS Animations Series</a> - youtube.com - DevTips</li><li><a href="https://www.youtube.com/watch?v=thNyy5eYfbc">High performance web user interfaces - Google I/O 2016</a> - youtube.com - Google Chrome Developers</li><li><a href="https://csstriggers.com/">CSS Triggers</a> - csstrigger.com, on performant animatable CSS properties</li></section><section class="issue_footer">Corrections? Improvements? Suggestions? <a href="https://github.com/rlamacraft/WebFormGuide/issues">Drop us an issue</a>.</section></main><footer><a class="prev" href="layout"><div class="label">Previous</div><div class="name">Layout</div></a><a class="next" href="components"><div class="label">Next</div><div class="name">Components</div></a></footer></body></html>
