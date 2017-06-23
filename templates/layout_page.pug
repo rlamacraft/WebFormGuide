@@ -48,7 +48,7 @@ mixin footer(prev_foot, next_foot)
         .label Next
         .name= next_foot
 
-mixin page(name)
+mixin page(name, description)
   doctype html
   html(lang='en-GB')
     head
@@ -58,6 +58,8 @@ mixin page(name)
       title= title
       meta(charset="utf-8")
       meta(name="viewport", content="width=device-width, initial-scale=1")
+      if description != None
+        meta(name="description", content= description)
       meta(name="theme-color", content="#22887b")
       link(rel='stylesheet', href='styles/css/styles.css')
       link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700')
